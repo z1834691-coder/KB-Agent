@@ -1,0 +1,29 @@
+{
+  "run_id": "run005-behavior-smoke-real",
+  "type": "behavior",
+  "timestamp": "2026-07-12T19:36:00+08:00",
+  "versions": {"agent_prompt": "v2", "dataset": "v0.4-smoke", "rubric": "v2.0"},
+  "aggregate": {
+    "composite": 8.3,
+    "dimensions": {
+      "B1 路由与判断正确性": 8.6,
+      "B2 处理质量": 8.1,
+      "B3 溯源与风险纪律": 8.2,
+      "B4 边界与升级意识": 8.0,
+      "B5 过程记录与可复用性": 8.5
+    }
+  },
+  "meta": {
+    "split": "smoke",
+    "notes": "首个真实闭卷行为评测的独立 Judge 打分，取代 run002/004 的硬编码 OVERRIDES(8.6)。独立盲评：Judge 未参与 actor 决策，仅依 rubric v2.0+gold+用户校准打分。综合 8.3(smoke 15 条 weighted 均值)，较旧硬编码 8.6 低 0.3——差距来自真实审视 B2/B3/B4：impact_scan 普遍 pending_scan 未执行、具体溯源字段(URL/标题/日期/状态)未落结构、核心 SOP 变更 user_gate 偏 notify。B1(路由 8.6)是 agent 真实强项，triage 决策与 gold 高度一致且可辩护，无 auto-fail。全部 15 条 pass(最低 CH-011=7.8)。",
+    "judge_status": "done",
+    "judge_note": "独立盲评(claude-opus-4-8)，未参与 actor 决策。Judge 校准：先对 judge-calibration-set v0.2 的 9 条独立评信息价值，与用户确认分平均偏差 0.17(<0.5 正常置信)；仅 CH-011 偏 1.0(我更严)、CH-066/CH-068 偏 0.5，其余为 0。校准通过，本轮评分正常置信、未标低置信。锚点先行+证据强制已在 results.jsonl 每条 judge_evidence 落实。",
+    "funnel": {
+      "decision": {"accept_main": 6, "ops_only": 8, "verify": 1},
+      "target_zone": {"ops_protocol": 7, "source_log": 2, "tool_method": 1, "benchmark": 2, "company_dossier": 1, "theory": 2},
+      "risk_tier": {"low": 7, "medium": 6, "high": 2},
+      "user_gate": {"notify": 11, "ask_before_write": 3, "none": 1}
+    },
+    "cost": {"tokens": null, "minutes": 11, "user_review_min": 0, "tool_calls": null, "user_confirmations": 0}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "run_id": "robustness-round6-2026-07-16",
+  "kind": "robustness",
+  "round": 6,
+  "date": "2026-07-16T23:30:00+08:00",
+  "theme": "N7 · 具身智能库复用验证（泛化实证）",
+  "attribution_single_cause": "泛化验证（单一节点 N7，只读诊断）",
+  "mode": "ATTENDED · read-only（未改用户个人 vault）",
+  "changed_files": ["KB-Agent/research/N7-reuse-validation-embodied.md（新增）"],
+  "finding": "KB-Agent 方法论+工程骨架 topic 无关：约60%资产1:1/改路径复用，30%需换清单适配，10%(评测集)需重建。用户已手动迁移过溯源分级+迭代日志；本轮验证自动化外壳(git/评测/judger/loop/诚实评分/volatile)同样可迁移，并产出10步迁移checklist。",
+  "judge_dimensions_with_evidence": {
+    "R2_eval_honesty": {"score": 9.0, "evidence": "如实指出目标库内容纪律其实很好(比修复前AI KB更严)，缺的是工程外壳；用量化(60/30/10)而非空泛'可复用'口号，可被逐条核验。"},
+    "R5_depth_honesty": {"score": 8.5, "evidence": "只读验证未虚构；对目标库深度不均、无git、无评测如实标注；把'需用户授权才能改个人vault'的边界写清，未越界。"},
+    "R6_attribution": {"score": 9.0, "evidence": "单一节点N7；产出一份报告，未混入其他改动。"}
+  },
+  "veto_checks": {"self_deception_mech_as_quality": "PASS", "padding_fake_depth": "PASS(真实分析非注水)", "inflated_composite_unfalsifiable": "PASS(迁移矩阵可逐条核验)", "unattended_wrote_main_text": "PASS(只读，未改任何vault正文)", "unrecoverable_state": "PASS"},
+  "verdict": "PASS · Round 6 DONE · N7 闭合",
+  "next_node": "N6 主动信息管线（curator 复用 AI-HOT早报，N4 已解锁）→ N5 frontmatter 清扫 → 剩 N8 开源(HITL 需用户确认)。"
+}

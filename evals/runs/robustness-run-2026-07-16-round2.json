@@ -1,0 +1,47 @@
+{
+  "run_id": "robustness-round2-2026-07-16",
+  "kind": "robustness",
+  "round": 2,
+  "date": "2026-07-16T22:40:00+08:00",
+  "theme": "N2 · MiniMax 档案补深（真实检索，禁注水）",
+  "attribution_single_cause": "data/内容缺口（单一节点 N2·MiniMax）",
+  "mode": "ATTENDED",
+  "changed_files": ["AI知识库 V3/company-dossiers/MiniMax.md (247 → 300 行)"],
+  "web_research_sources": [
+    "minimax.io 官方 + M3 blog + M2 GitHub + M1 arxiv 2506.13585",
+    "law.asia / 证券时报 / 财联社 / qbitai (IPO 00100.HK)",
+    "OpenRouter / Artificial Analysis / VentureBeat (benchmark)"
+  ],
+  "mechanical": {
+    "minimax_lines_before": 247,
+    "minimax_lines_after": 300,
+    "under_depth_threshold": 283.2,
+    "cleared_under_depth_gate": true,
+    "doctor_mechanical_composite": 6.9,
+    "still_under_depth": ["Moonshot.md (252)", "Zhipu.md (251)"]
+  },
+  "judge_dimensions_with_evidence": {
+    "R2_eval_honesty": {
+      "score": 9.5,
+      "evidence": "档案内部主动标注 M3 benchmark 为'厂商自评、发布当日开源权重未 ship、独立复现待权重'，并把 8.1 面试题第4问设计成'怎么看 M3 benchmark(考判断力)'——把评测诚实性直接写进求职弹药，而非藏起来。财务/融资口径差异逐条标注 A/B/C 置信度。"
+    },
+    "R5_depth_honesty": {
+      "score": 7.5,
+      "evidence": "诚实结论：这是'清除半深度 + 重大纠错'，非满行数对齐。(1)纠正了原档案把已上市(2026-01-09 港交所 00100.HK 募资48.2亿港元)错列为'待核'的静默过期事实——高价值；(2)补入 MSA 架构、M2/M3 真实 benchmark、组织(385人/闫俊杰)、股权(阿里13.66%)全部带源；(3)247→300 行清除 under-depth 机械门(>283)。未达样板 480 行是**刻意的**——继续拉长会滑向注水，宁可 300 行密度高不要 480 行掺水。"
+    },
+    "R6_attribution": {
+      "score": 9.0,
+      "evidence": "严格单一变量：只动 MiniMax.md 一个内容节点，未同时改评分器/工具/其他档案。"
+    }
+  },
+  "veto_checks": {
+    "self_deception_mech_as_quality": "PASS",
+    "padding_fake_depth": "PASS (逐块可回指 web 检索源，无复读/占位/编造；快变数据标⚠️待核)",
+    "inflated_composite_unfalsifiable": "PASS",
+    "unattended_wrote_main_text": "PASS (ATTENDED 模式，用户在场授权本轮补档案)",
+    "unrecoverable_state": "PASS"
+  },
+  "verdict": "PASS · Round 2 DONE (MiniMax 清除 under-depth + 纠错)",
+  "honest_caveat": "N2 未全闭：Moonshot(252)/Zhipu(251) 仍在 under-depth。MiniMax 达到'诚实合格'而非'满行数样板'。",
+  "next_node": "N2 续 · Round 3 = Moonshot 档案补深（同样真实检索、禁注水）。"
+}

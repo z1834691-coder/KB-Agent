@@ -1,0 +1,23 @@
+{
+  "run_id": "robustness-round3-2026-07-16",
+  "kind": "robustness",
+  "round": 3,
+  "date": "2026-07-16T22:52:00+08:00",
+  "theme": "N2 · Moonshot(Kimi) 档案补深（真实检索，禁注水）",
+  "attribution_single_cause": "data/内容缺口（单一节点 N2·Moonshot）",
+  "mode": "ATTENDED",
+  "changed_files": ["AI知识库 V3/company-dossiers/Moonshot.md (252 → 292 行)"],
+  "web_research_sources": [
+    "TechCrunch (2026-05-07 $2B@$20B Meituan D轮)", "36Kr (K3内部信/300亿传闻)",
+    "Wikipedia Moonshot AI (创始人/阿里36%)", "OpenRouter/Artificial Analysis (K2.6 benchmark/幻觉率)"
+  ],
+  "mechanical": {"moonshot_lines_before": 252, "moonshot_lines_after": 292, "cleared_under_depth_gate": true, "doctor_mechanical_composite": 7.1, "still_under_depth": ["Zhipu.md (251)"]},
+  "judge_dimensions_with_evidence": {
+    "R2_eval_honesty": {"score": 9.5, "evidence": "K2.6 benchmark/估值/ARR 逐条标 A/B/C 置信度并区分'媒体口径 vs 审计确认'；把'半年6倍估值怎么看'和'Anthropic 盗号指控怎么看'直接设计成面试判断题，把批判性写进求职弹药。"},
+    "R5_depth_honesty": {"score": 7.5, "evidence": "252→292 行清除 under-depth；纠正估值/融资从'待核'→200亿美元(Meituan D轮)实据，补入 K2.6 Agent Swarm(300子agent/4000步)、幻觉率65%→39%、K3路线、Anthropic争议、创始人/股权(阿里36%)。刻意不拉到样板480行以避注水。"},
+    "R6_attribution": {"score": 9.0, "evidence": "单一变量：只动 Moonshot.md。"}
+  },
+  "veto_checks": {"self_deception_mech_as_quality": "PASS", "padding_fake_depth": "PASS", "inflated_composite_unfalsifiable": "PASS", "unattended_wrote_main_text": "PASS (ATTENDED)", "unrecoverable_state": "PASS"},
+  "verdict": "PASS · Round 3 DONE (Moonshot 清除 under-depth + 纠错)",
+  "next_node": "N2 收尾 · Round 4 = Zhipu 档案补深（最后一家 under-depth）。"
+}

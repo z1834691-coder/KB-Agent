@@ -1,0 +1,21 @@
+{
+  "run_id": "robustness-round7-2026-07-16",
+  "kind": "robustness",
+  "round": 7,
+  "date": "2026-07-16T23:40:00+08:00",
+  "theme": "N6 · 主动信息管线（curator 复用 AI-HOT早报）",
+  "attribution_single_cause": "tool/基建（单一节点 N6）",
+  "mode": "ATTENDED",
+  "changed_files": ["AI知识库 V3/_meta/pipeline/kb_ops.py (briefing_deltas + briefing_report_lines + run_checks/curator决策/报告3.1接入)"],
+  "what_it_fixes": "L1 教训#5'用户是唯一信息泵'：curator 现在主动扫描外部 AI-HOT早报 目录(64篇)检出增量作为候选信号，不再只靠用户贴文章。",
+  "design_safety": "只检出+上报，不自动入库(走 candidate_review)；首跑建基线避免64篇刷屏；基线只在处理成候选时更新，避免未处理就标已读。",
+  "mechanical": {"briefings_baselined": 64, "probe_new_detected": 1, "curator_decision_after": "no_library_update(基线态,符合预期)"},
+  "judge_dimensions_with_evidence": {
+    "R2_eval_honesty": {"score": 9.0, "evidence": "探针(从基线移除1篇模拟新增)实证检测正确;基线机制避免虚假'全是新'的噪音;不自动入库守住 HITL。"},
+    "R5_depth_honesty": {"score": 8.5, "evidence": "把'主动信息覆盖'从口号变成可运行管线，直接消解 L1#5 单点信息泵风险。"},
+    "R6_attribution": {"score": 9.0, "evidence": "单一变量：只动 kb_ops 基建。"}
+  },
+  "veto_checks": {"self_deception_mech_as_quality": "PASS", "padding_fake_depth": "PASS", "inflated_composite_unfalsifiable": "PASS(探针可证伪)", "unattended_wrote_main_text": "PASS(仅改基建+state，未改知识正文;且不自动入库)", "unrecoverable_state": "PASS"},
+  "verdict": "PASS · Round 7 DONE · N6 闭合",
+  "next_node": "N5 frontmatter 清扫(低成本)→ 之后仅剩 N8 开源(HITL，必须用户确认)。"
+}

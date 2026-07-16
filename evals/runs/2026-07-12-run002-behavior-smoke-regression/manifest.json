@@ -1,0 +1,29 @@
+{
+  "run_id": "run002-behavior-smoke-regression-v1",
+  "type": "behavior",
+  "timestamp": "2026-07-12T18:28:56+08:00",
+  "versions": {
+    "agent_prompt": "v1",
+    "dataset": "challenge-dataset-v0.4 smoke+regression",
+    "rubric": "v2.0 user-calibrated"
+  },
+  "aggregate": {
+    "composite": 8.5,
+    "dimensions": {
+      "B1 路由与判断正确性": 8.7,
+      "B2 处理质量": 8.2,
+      "B3 溯源与风险纪律": 8.6,
+      "B4 边界与升级意识": 8.0,
+      "B5 过程记录与可复用性": 8.4
+    }
+  },
+  "meta": {
+    "split": "smoke+regression",
+    "notes": "30-case first formal v1 run. smoke=8.5, regression=8.4. Actor is the persisted v1 policy prompt executed in this Codex harness run.",
+    "cost": {
+      "tokens": null,
+      "minutes": 35,
+      "user_review_min": 0
+    }
+  }
+}

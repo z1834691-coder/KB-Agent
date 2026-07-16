@@ -1,0 +1,66 @@
+{
+  "run_id": "run004-behavior-smoke-regression-v2",
+  "type": "behavior",
+  "timestamp": "2026-07-12T18:51:51+08:00",
+  "versions": {
+    "agent_prompt": "v2",
+    "dataset": "challenge-dataset-v0.4 smoke+regression",
+    "rubric": "v2.0 user-calibrated"
+  },
+  "aggregate": {
+    "composite": 8.6,
+    "dimensions": {
+      "B1 路由与判断正确性": 8.8,
+      "B2 处理质量": 8.4,
+      "B3 溯源与风险纪律": 8.7,
+      "B4 边界与升级意识": 8.2,
+      "B5 过程记录与可复用性": 8.7
+    }
+  },
+  "meta": {
+    "split": "smoke+regression",
+    "notes": "v2 data-driven rerun. smoke=8.7, regression=8.5. Adds structured funnel fields and fixes v1 failure modes.",
+    "funnel": {
+      "decision": {
+        "reject": 2,
+        "ops_only": 9,
+        "verify": 2,
+        "candidate": 4,
+        "reject_or_metadata_only": 1,
+        "accept_main": 10,
+        "human_review": 1,
+        "accept_private": 1
+      },
+      "target_zone": {
+        "none": 2,
+        "ops_protocol": 9,
+        "tool_method": 6,
+        "source_log": 6,
+        "benchmark": 2,
+        "ops_protocol/tool_method": 1,
+        "private_profile": 1,
+        "company_dossier": 1,
+        "theory": 1,
+        "theory/tool_method": 1
+      },
+      "risk_tier": {
+        "medium": 13,
+        "blocking": 4,
+        "high": 4,
+        "low": 9
+      },
+      "user_gate": {
+        "none": 14,
+        "block": 2,
+        "ask_before_write": 4,
+        "notify": 9,
+        "ask_before_write/block": 1
+      }
+    },
+    "cost": {
+      "tokens": null,
+      "minutes": 28,
+      "user_review_min": 0
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "run_id": "run001-calibration-v1",
+  "type": "calibration",
+  "timestamp": "2026-07-12T18:28:56+08:00",
+  "versions": {
+    "agent_prompt": "v1",
+    "dataset": "challenge-dataset-v0.4 calibration subset",
+    "rubric": "v2.0 user-calibrated source-value lens"
+  },
+  "aggregate": {
+    "composite": 9.7,
+    "dimensions": {
+      "Judge 对齐分": 9.7,
+      "最大偏差反向分": 9.0,
+      "0.5以内比例x10": 8.9
+    }
+  },
+  "meta": {
+    "split": "calibration",
+    "notes": "用户确认分按 AI PM 主知识库信息价值解释；v1 与用户校准平均偏差 0.28。",
+    "cost": {
+      "tokens": null,
+      "minutes": 12,
+      "user_review_min": 0
+    }
+  }
+}

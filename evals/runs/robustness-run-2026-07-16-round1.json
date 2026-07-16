@@ -1,0 +1,44 @@
+{
+  "run_id": "robustness-round1-2026-07-16",
+  "kind": "robustness",
+  "date": "2026-07-16T22:25:00+08:00",
+  "round": 1,
+  "theme": "Doctor 评分诚实化（第三次抓出 eval 自欺）",
+  "attribution_single_cause": "rubric/评分器缺陷",
+  "changed_files": [
+    "AI知识库 V3/_meta/pipeline/kb_ops.py (score_doctor + actionability_score + dossier_depth_stats + report banner)"
+  ],
+  "mechanical": {
+    "source": "evals/robustness_audit.py",
+    "mechanical_integrity_score": 10.0,
+    "R1_recoverability": 10.0,
+    "R3_traceability": 10.0,
+    "R4_safety_boundary": 10.0,
+    "R7_reuse": 10.0,
+    "dossier_under_depth": ["MiniMax.md", "Moonshot.md", "Zhipu.md"]
+  },
+  "judge_dimensions_with_evidence": {
+    "R2_eval_honesty": {
+      "score": 9.0,
+      "evidence": "本轮的全部目的就是消除虚高：机械分与质量分已物理分离，doctor 报告顶部强制 banner 声明'非质量分'，score_doctor 输出带 requires_judge=[D2,D5]。铁证前后对比：同 KB 状态机械分 9.1(虚高) → 6.6(诚实，≈人审6.8)。未满分因为 D5 机械代理(=3.0)偏保守，仍是代理而非真评测，需 LLM/人工复核。"
+    },
+    "R5_depth_honesty": {
+      "score": 5.0,
+      "evidence": "深度不诚实问题仍客观存在(MiniMax/Moonshot/Zhipu 各 247/251/252 行，<中位数472的60%)，但本轮已让评分器'诚实地暴露'该问题(D2 从9.8降到6.8)，而非继续掩盖。分数中等：暴露=进步，但内容本身未补(归属 N2 下一轮)。未注水，无一票否决。"
+    },
+    "R6_attribution": {
+      "score": 9.0,
+      "evidence": "本轮严格单一归因=rubric类，只改评分器一类变量，未同时动内容/工具/数据；改动可被 git diff 逐行核验。"
+    }
+  },
+  "veto_checks": {
+    "self_deception_mech_as_quality": "PASS (本轮正是修复此项)",
+    "padding_fake_depth": "PASS (未生成任何内容，无注水)",
+    "inflated_composite_unfalsifiable": "PASS (分数可由 git diff + 前后对比证伪)",
+    "unattended_wrote_main_text": "PASS (ATTENDED 模式，用户在场；仅改评分器与元数据，未改知识正文)",
+    "unrecoverable_state": "PASS (进展.md/tree/loop-prompt 已更新，新会话可续)"
+  },
+  "composite_note": "综合鲁棒性 ≈ 8.0/10（机械10 × [MECH]权重 + R2 9.0 / R5 5.0 / R6 9.0 × [JUDGE]权重）。但按 rubric 铁律：综合分不作单一证据，以上 [JUDGE] 文字证据为准。",
+  "verdict": "PASS · Round 1 DONE",
+  "next_node": "N2 · 后3家档案补齐（建议先 MiniMax），需真实来源检索，judger 将把'是否注水'设为一票否决。"
+}

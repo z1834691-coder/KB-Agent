@@ -1,0 +1,30 @@
+{
+  "run_id": "robustness-round4-2026-07-16",
+  "kind": "robustness",
+  "round": 4,
+  "date": "2026-07-16T23:05:00+08:00",
+  "theme": "N2 收尾 · Zhipu(智谱/GLM) 档案补深 → N2 全闭",
+  "attribution_single_cause": "data/内容缺口（单一节点 N2·Zhipu）",
+  "mode": "ATTENDED",
+  "changed_files": ["AI知识库 V3/company-dossiers/Zhipu.md (251 → 289 行)"],
+  "web_research_sources": [
+    "财新/证券时报/量子位/pedaily/technode (IPO 2313.HK 2026-01-08 全球AGI第一股)",
+    "招股书报道 (亏损/估值/客户/份额)", "GLM-4.7 榜单/AutoGLM/日调用量"
+  ],
+  "mechanical": {
+    "zhipu_lines_before": 251, "zhipu_lines_after": 289,
+    "under_depth_threshold": 283.2, "cleared_under_depth_gate": true,
+    "doctor_mechanical_composite_after": 7.4,
+    "all_dossiers_cleared_under_depth": true,
+    "N2_status": "CLOSED — 0 under-depth dossiers remaining"
+  },
+  "judge_dimensions_with_evidence": {
+    "R2_eval_honesty": {"score": 9.5, "evidence": "GLM-4.7 盲测胜 GPT-5.2 明确标'榜单/发布前口径、非长期稳定排名'并设计成面试判断题；净亏47亿设计成'怎么看烧钱换代际(考判断力)'题；股价/再融资标 C 级待核。诚实评分器奖励真深度：doctor 从诚实基线 6.6 自然升到 7.4，是真实内容改进而非调分。"},
+    "R5_depth_honesty": {"score": 8.0, "evidence": "251→289 行清除 under-depth；纠正 IPO/融资从'待核'→全球AGI基座第一股(2313.HK)实据，补入真实财务(2025净亏47.18亿/研发31.8亿)、GLM-4.7战绩、GLM-5官宣、AutoGLM 8000万终端/日4.6万亿token、六小龙资本化格局、创始人(唐杰/张鹏)。为过 283.2 阈值补的是真实'六小龙上市顺序'高价值内容非注水。"},
+    "R6_attribution": {"score": 9.0, "evidence": "单一变量：只动 Zhipu.md。"}
+  },
+  "veto_checks": {"self_deception_mech_as_quality": "PASS", "padding_fake_depth": "PASS (过阈值靠真实横向格局内容，非复读)", "inflated_composite_unfalsifiable": "PASS", "unattended_wrote_main_text": "PASS (ATTENDED)", "unrecoverable_state": "PASS"},
+  "verdict": "PASS · Round 4 DONE · N2 全节点闭合",
+  "n2_summary": "MiniMax/Moonshot/Zhipu 三家均清除 under-depth 并纠正了'已上市/高估值'的静默过期错误；7家档案全部达到诚实深度门。doctor 机械分 9.1(虚高)→6.6(诚实基线)→7.4(真实内容改进)。",
+  "next_node": "N4(快变事实stale-checker) 或 N7(具身库复用验证)；开源 N8 仍需用户确认。建议下一轮 N4——因为本轮暴露所有公司档案的'融资/股价/估值'都是高频静默过期字段，正需要 source manifest + 字段级 stale checker。"
+}

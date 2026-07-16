@@ -1,0 +1,25 @@
+# OS / editor
+.DS_Store
+.obsidian/
+__MACOSX/
+
+# large / third-party bundles — never publish
+tools/
+
+# images (may contain personal or KB content)
+*.png
+*.jpg
+*.jpeg
+
+# personal portfolio narrative — kept out of public repo
+PROJECT-STORY.md
+
+# CLOSED-BOOK EVAL INTEGRITY — never publish gold answers or labelled datasets.
+# Only the actor-visible question pack (…-actor-pack.md) is public; publishing the
+# answer key would let any model memorize the benchmark and defeat blind eval.
+evals/02-challenge-dataset-*-gold.md
+evals/02-challenge-dataset-v0.1.md
+evals/02-challenge-dataset-v0.2.md
+evals/02-challenge-dataset-v0.3.md
+evals/02-challenge-dataset-v0.4.md
+evals/02-challenge-dataset-v0.4.jsonl

@@ -1,0 +1,22 @@
+{
+  "run_id": "run000-baseline",
+  "type": "state",
+  "timestamp": "2026-07-11T18:00:00+08:00",
+  "versions": {"agent_prompt": "v0（无 agent）", "dataset": "-", "rubric": "v0.1"},
+  "aggregate": {
+    "composite": 4.7,
+    "dimensions": {
+      "D1 信息质量": 5.5,
+      "D2 内容价值与目标对齐": 5.0,
+      "D3 结构与组织": 6.0,
+      "D4 呈现与体验": 4.5,
+      "D5 可维护性与流程": 2.5,
+      "D6 对标顶尖": 3.5
+    }
+  },
+  "meta": {
+    "split": null,
+    "notes": "知识库 V3 基线状态评测（证据见 evals/04-baseline-report-v0.1.md；git tag baseline-v0）",
+    "cost": {"tokens": null, "minutes": null, "user_review_min": null}
+  }
+}

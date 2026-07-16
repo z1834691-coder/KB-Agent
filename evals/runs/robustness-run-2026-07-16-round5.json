@@ -1,0 +1,30 @@
+{
+  "run_id": "robustness-round5-2026-07-16",
+  "kind": "robustness",
+  "round": 5,
+  "date": "2026-07-16T23:20:00+08:00",
+  "theme": "N4 · 快变事实 stale-checker + source manifest（系统化 IPO 静默过期）",
+  "attribution_single_cause": "tool/基建（kb_ops + source manifest，单一节点 N4）",
+  "mode": "ATTENDED",
+  "changed_files": [
+    "AI知识库 V3/_meta/pipeline/kb_ops.py (volatile_review_due + run_checks/doctor报告4.5/D3惩罚/curator决策)",
+    "AI知识库 V3/_meta/sources/official-sources.json (+8 国内公司官方源)"
+  ],
+  "what_it_fixes": "document-level stale_after 常设一个月外，抓不到 IPO/估值/股价/融资/MAU/模型版本等字段级快变事实——正是三家公司 IPO 被静默错标'待核'的根因。新增 company-dossier 专用 14 天 volatile window。",
+  "mechanical": {
+    "company_sources_added": 8,
+    "doctor_composite_after": 7.4,
+    "volatile_due_today": 0,
+    "probe_window_1day_caught": ["Alibaba(1d)", "Bytedance(1d)", "StepFun(1d)", "DeepSeek(2d)"],
+    "probe_correctly_excluded_today_refreshed": ["MiniMax", "Moonshot", "Zhipu"]
+  },
+  "judge_dimensions_with_evidence": {
+    "R2_eval_honesty": {"score": 9.0, "evidence": "D3 对 overdue volatile 档案扣分是真实新鲜度信号(逾期快变事实确属时效问题)，非机械虚高；检查器把问题'暴露'到 Doctor 报告 4.5 板块与 curator 决策，而非隐藏。window=1 探针实证它真会触发、且不误伤当天刷新的档案。"},
+    "R5_depth_honesty": {"score": 8.5, "evidence": "这轮把'深度/事实诚实'从一次性人工努力，升级成可持续的系统机制：以后任何公司档案的快变事实超 14 天未复核，会自动进复核队列，防止再次静默过期。"},
+    "R6_attribution": {"score": 9.0, "evidence": "单一变量：只动 kb_ops(基建) + source manifest，未同时改档案正文/评分口径以外逻辑。"}
+  },
+  "veto_checks": {"self_deception_mech_as_quality": "PASS", "padding_fake_depth": "PASS (工程改动无内容注水)", "inflated_composite_unfalsifiable": "PASS (探针可证伪)", "unattended_wrote_main_text": "PASS (ATTENDED；仅改 _meta 基建/源清单，未改知识正文)", "unrecoverable_state": "PASS"},
+  "verdict": "PASS · Round 5 DONE · N4 闭合",
+  "next_node": "N7 具身智能库复用验证（把 SOP+评测框架迁到 Desktop/韶音实习/具身智能PM知识库/，泛化实证）；或 N5 旧文档 frontmatter 对齐（低成本清扫）。N8 开源仍 HITL 待用户确认。",
+  "convention_note": "今后公司档案内容刷新时应在 frontmatter 写 volatile_review: <日期>；无则回退 last_reviewed。"
+}
