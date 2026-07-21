@@ -1,4 +1,4 @@
-# KB-Agent · 一个会"自己维护自己、还不自欺"的 AI 知识库系统
+# KB-Agent · 一个会"自己维护、自己迭代、高鲁邦性"的知识库agent harness系统
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 ![Approach](https://img.shields.io/badge/approach-eval--first-orange.svg)
@@ -6,9 +6,9 @@
 ![Safety](https://img.shields.io/badge/safety-HITL-red.svg)
 ![Autonomy](https://img.shields.io/badge/self--iterated-10%20rounds%20·%200%20gaming-brightgreen.svg)
 
-> **一句话**：把一个静态的 Markdown 知识库，变成一个能**自主诊断 → 更新 → 评测 → 自我优化**的活系统——它最稀缺的能力不是"写内容"，而是**知道自己写得好不好、并且不自欺**。
+> **一句话**：把一个静态的 Markdown 知识库，变成一个能**自主诊断 → 更新 → 评测 → 不断迭代**的agent系统——它最稀缺的能力不是"写内容"，而是**知道自己写得好不好、并且多层judge和self correction、自动化迭代**。
 >
-> 这是一个 **eval-first 的 AI Harness（agent 编排）项目**：不先写功能，先建评测；像训练模型一样用 dev/holdout 迭代 agent 本身；用**多个角色隔离的 agent + 两条自动化 loop + 数据飞轮**把"维护知识库"这件事系统化。全程 git 可追溯、HITL 安全边界、SOP 可复用。
+> 这是一个 **eval-first 的 AI Harness（multiagent 编排）项目**：不先写功能，先建评测；像训练模型一样用 dev/holdout 迭代 agent 本身；用**多个角色隔离、三层嵌套的 agent + 两条自动化 loop + 数据飞轮 + 多层judger和sop沉淀**把"维护知识库"这件事系统化。全程 git 可追溯、HITL 安全边界、SOP 可复用。
 
 > **📢 公开版说明**：本仓库是**净化导出版（sanitized export）**。为保护**闭卷评测（blind eval）**的有效性，**刻意不含评测"答案键"**——完整标注数据集与 gold 答案不公开，只公开被测 agent 可见的**题目包** `evals/02-challenge-dataset-v0.4-actor-pack.md`。被维护的知识库本体（真实 vault）随私有仓库保存，但本仓库自带一个**最小可跑的示例 vault**（`examples/sample-vault/`，含一份 sanitized 的 `kb_ops.py`）与示例挑战集——**clone 下来即可真跑一遍**全部管线。个人作品叙事、截图、第三方捆绑不在公开范围。"不公开答案键"本身就是本项目"评测不作弊"原则的体现。
 
