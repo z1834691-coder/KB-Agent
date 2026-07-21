@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "kb-agent.failure-pattern.v1",
+  "title": "KB-Agent failure pattern",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "title", "status", "trigger", "evidence", "corrective_artifact"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^F-[0-9]{3}$" },
+    "title": { "type": "string" },
+    "status": { "type": "string", "enum": ["active", "watch", "resolved", "legacy"] },
+    "trigger": { "type": "string" },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["run_id", "case_ids"],
+        "properties": {
+          "run_id": { "type": "string" },
+          "case_ids": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "corrective_artifact": { "type": "string" },
+    "prompt_action": { "type": "string", "enum": ["none", "candidate", "applied", "holdout_summary_only"] },
+    "notes": { "type": "string" }
+  }
+}

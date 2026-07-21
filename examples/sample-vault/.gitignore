@@ -1,0 +1,9 @@
+# Runtime-generated artifacts (created when you run kb_ops.py against this sample vault).
+# Regenerate them locally; they are intentionally not committed. The dashboard in
+# particular embeds absolute local file:// paths, so it must never be published.
+_meta/reports/
+_meta/dashboard/
+_meta/state/
+_meta/logs/
+_meta/flywheel/run-events.jsonl
+_meta/flywheel/candidate-decisions.jsonl

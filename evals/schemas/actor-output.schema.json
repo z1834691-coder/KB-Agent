@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "kb-agent.actor-output.v5",
+  "title": "KB-Agent actor blind output v5",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "case_id",
+    "output",
+    "decision",
+    "target_zone",
+    "artifact_type",
+    "applicable_blocks",
+    "granularity",
+    "freshness_policy",
+    "source_grade",
+    "provenance",
+    "risk_tier",
+    "risk_flags",
+    "confidence",
+    "user_gate",
+    "gate_detail",
+    "pm_transfer_score",
+    "candidate_admission",
+    "triage_record",
+    "impact_scan",
+    "task_lifecycle",
+    "required_fields_check",
+    "chart_schema",
+    "migration_record",
+    "theory_caveats",
+    "quotation_policy",
+    "execution_template",
+    "failure_mode",
+    "changelog_note",
+    "flywheel_data"
+  ],
+  "not": {
+    "anyOf": [
+      { "required": ["scores"] },
+      { "required": ["weighted"] },
+      { "required": ["verdict"] },
+      { "required": ["judge_evidence"] },
+      { "required": ["expected_action"] }
+    ]
+  },
+  "properties": {
+    "case_id": { "type": "string", "pattern": "^CH-[0-9]{3}$" },
+    "output": { "type": "string", "minLength": 1 },
+    "decision": {
+      "type": "string",
+      "enum": ["accept_main", "accept_private", "ops_only", "candidate", "verify", "reject", "human_review"]
+    },
+    "target_zone": {
+      "type": "string",
+      "enum": ["AI_PM_core", "company_dossier", "theory", "benchmark", "tool_method", "source_log", "ops_protocol", "private_profile", "none"]
+    },
+    "artifact_type": { "type": "string" },
+    "applicable_blocks": { "type": "array", "items": { "type": "string" } },
+    "granularity": { "type": "string" },
+    "freshness_policy": { "type": "string" },
+    "source_grade": { "type": "string", "enum": ["A", "B", "C", "D", "F"] },
+    "risk_tier": { "type": "string", "enum": ["low", "medium", "high", "blocking"] },
+    "risk_flags": { "type": "array", "items": { "type": "string" } },
+    "confidence": { "type": "string", "enum": ["high", "medium", "low"] },
+    "user_gate": { "type": "string", "enum": ["none", "notify", "ask_before_write", "block"] },
+    "gate_detail": { "type": "string" },
+    "failure_mode": { "type": "array", "items": { "type": "string" } },
+    "flywheel_data": { "type": "array", "items": { "type": "string" } }
+  }
+}

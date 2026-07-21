@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import statistics
 import subprocess
 import sys
@@ -26,7 +27,24 @@ from pathlib import Path
 TZ = timezone(timedelta(hours=8))
 SCRIPT = Path(__file__).resolve()
 KB_AGENT = SCRIPT.parents[1]
-VAULT = KB_AGENT.parent / "AI知识库 V3"
+
+
+def resolve_vault() -> Path:
+    """Locate the maintained vault. Order: $KB_VAULT → sibling private vault →
+    bundled examples/sample-vault (so a fresh clone runs out of the box)."""
+    env = os.environ.get("KB_VAULT")
+    if env:
+        return Path(env).expanduser()
+    sibling = KB_AGENT.parent / "AI知识库 V3"
+    if sibling.exists():
+        return sibling
+    bundled = KB_AGENT / "examples" / "sample-vault"
+    if bundled.exists():
+        return bundled
+    return sibling
+
+
+VAULT = resolve_vault()
 DOSSIERS = VAULT / "company-dossiers"
 FLYWHEEL = VAULT / "_meta" / "flywheel"
 

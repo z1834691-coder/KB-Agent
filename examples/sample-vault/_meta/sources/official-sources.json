@@ -1,0 +1,17 @@
+{
+  "note": "示例官方源清单。curator --fetch 会拉取这些 URL 并比对 hash 以发现更新。请替换为你自己主题的权威源。",
+  "sources": [
+    {
+      "id": "example-blog",
+      "name": "Example.com 官方博客（占位）",
+      "url": "https://example.com/",
+      "tier": "A"
+    },
+    {
+      "id": "example-status",
+      "name": "Example.org 状态页（占位）",
+      "url": "https://example.org/",
+      "tier": "B"
+    }
+  ]
+}

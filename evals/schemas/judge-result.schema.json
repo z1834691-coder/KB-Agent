@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "kb-agent.judge-result.v2",
+  "title": "KB-Agent independent judge result",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "case_id",
+    "category",
+    "input_ref",
+    "input_excerpt",
+    "output",
+    "scores",
+    "weighted",
+    "verdict",
+    "judge_evidence",
+    "decision",
+    "target_zone",
+    "granularity",
+    "freshness_policy",
+    "risk_tier",
+    "user_gate",
+    "failure_mode"
+  ],
+  "properties": {
+    "case_id": { "type": "string", "pattern": "^CH-[0-9]{3}$" },
+    "category": { "type": "string" },
+    "scores": {
+      "type": "object",
+      "required": ["B1", "B2", "B3", "B4", "B5"],
+      "properties": {
+        "B1": { "type": "number", "minimum": 0, "maximum": 10 },
+        "B2": { "type": "number", "minimum": 0, "maximum": 10 },
+        "B3": { "type": "number", "minimum": 0, "maximum": 10 },
+        "B4": { "type": "number", "minimum": 0, "maximum": 10 },
+        "B5": { "type": "number", "minimum": 0, "maximum": 10 }
+      }
+    },
+    "weighted": { "type": "number", "minimum": 0, "maximum": 10 },
+    "verdict": { "type": "string", "enum": ["pass", "partial", "fail", "aligned", "needs_review"] },
+    "judge_evidence": { "type": "string", "minLength": 1 }
+  }
+}
